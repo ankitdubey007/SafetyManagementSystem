@@ -33,7 +33,7 @@ public class InjuryRestController {
 	@Autowired
 	InjuryService injuryService;
 	
-	@PostMapping("/addinjury")
+	@PostMapping("/addInjury")
 	public Injury addInjury(@Validated @RequestBody Injury injury){
 		
 	         Users userResponse =userService.findById(injury.getUser().getUserId());

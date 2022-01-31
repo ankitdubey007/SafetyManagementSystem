@@ -51,4 +51,17 @@ public class Admin {
 		return "Admin [AdminId=" +adminId + ", adminName=" + adminName + ", password=" + password +  "]";
 	}
 
+	public Admin(long adminId, String adminName, String password) {
+		super();
+		this.adminId = adminId;
+		this.adminName = adminName;
+		this.password = password;
+	}
+
+	public Admin() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
 }

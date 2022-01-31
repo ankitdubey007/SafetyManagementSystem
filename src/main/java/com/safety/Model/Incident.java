@@ -1,6 +1,8 @@
 package com.safety.Model;
 
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collector;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,6 +33,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Incident {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int incidentId;
 	@NotEmpty(message="incidentinfo should not be empty.")
 	private String incidentInfo;
@@ -85,6 +88,21 @@ public void setUser(Users user) {
 	public String toString() {
 		return "Incident [incidentId=" + incidentId + ", incidentInfo=" + incidentInfo + ", incidentDate="
 				+ incidentDate + ", user=" + user + "]";
+	}
+
+	
+	public Incident(int incidentId, @NotEmpty(message = "incidentinfo should not be empty.") String incidentInfo,
+			Date incidentDate, Users user, Injury injury) {
+		super();
+		this.incidentId = incidentId;
+		this.incidentInfo = incidentInfo;
+		this.incidentDate = incidentDate;
+		this.user = user;
+		this.injury = injury;
+	}
+	public Incident() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	

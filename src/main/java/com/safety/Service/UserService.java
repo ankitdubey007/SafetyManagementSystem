@@ -1,5 +1,6 @@
 package com.safety.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.catalina.User;
@@ -24,6 +25,11 @@ public class UserService {
 		// TODO Auto-generated method stub
 		Optional<Users> user =repo.findById(id);
 		return user.get();
+	}
+
+	public List<Users> findAllUsers() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
 	}
 
 	

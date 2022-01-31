@@ -1,5 +1,7 @@
 package com.safety.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.safety.Model.Incident;
+import com.safety.Model.Injury;
 import com.safety.Model.Users;
 import com.safety.Service.UserService;
 
@@ -22,7 +25,7 @@ public class UserRestController {
 	@Autowired
 	UserService service;
 
-	@PostMapping("/adduser")
+	@PostMapping("/addUser")
 public Users saveUser(@RequestBody Users user) {
 		System.out.println(user);
 		Users userResponse =service.addUser(user);
@@ -36,6 +39,12 @@ public Users saveUser(@RequestBody Users user) {
 		Users userResponse = service.findById(userId);
 		
 		return userResponse;
+	}
+	@GetMapping
+	
+	public ResponseEntity<List<Users>> fetchAllUsers(){
+		List<Users> user=service.findAllUsers();
+		return ResponseEntity.ok().body(user);
 	}
 	
 }

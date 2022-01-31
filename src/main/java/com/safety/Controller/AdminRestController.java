@@ -22,12 +22,12 @@ public class AdminRestController {
 	AdminService adminService;
 	
 	@PostMapping("/register")
-	public ResponseEntity<Admin> createAd(@Validated @RequestBody Admin admin)
+	public ResponseEntity<Admin> addAdmin(@Validated @RequestBody Admin admin)
 	{
 		System.out.println("Rest");
 		Admin e= adminService.addAdmin(admin);
 		System.out.println(e);
-		//return  ResponseEntity.ok().body("Registration Successfully");
+		
 		return new ResponseEntity<Admin>(e,HttpStatus.OK);
 	}
 	

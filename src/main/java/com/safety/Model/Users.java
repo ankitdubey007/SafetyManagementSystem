@@ -61,6 +61,16 @@ public String toString() {
 	return "Users [userId=" + userId + ", userName=" + userName + ", incident=" + incident + "]";
 }
 
+public Users(int userId, String userName) {
+	super();
+	this.userId = userId;
+	this.userName = userName;
+}
+public Users() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
 
 
 

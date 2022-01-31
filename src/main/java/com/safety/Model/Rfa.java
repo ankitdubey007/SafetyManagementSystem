@@ -1,6 +1,7 @@
 package com.safety.Model;
 
 import java.util.List;
+import java.util.stream.Collector;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -76,6 +77,21 @@ public class Rfa {
 					+ "]";
 		}
 
+		public Rfa(int rfaId, @NotEmpty(message = "request field should not be empty..") String request,
+				@NotEmpty(message = "reason field should not be empty..") String reason, Users user) {
+			super();
+			this.rfaId = rfaId;
+			this.request = request;
+			this.reason = reason;
+			this.user = user;
+		}
+
+		public Rfa() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+
+		
 
 
 
